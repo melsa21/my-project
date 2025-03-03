@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.nav-bar {
+    background-color: #ffffff;
+    height: 65px;
+    box-shadow: 2px 1px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 100px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.left i {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.search-bar i {
+    display: inline;
+    position: absolute;
+    left: 18px;  /* İkonun input içinde solda olması için */
+    color: #888;
+}
+
+.right i {
+    display: none;
+}
+
+.search-bar input {
+    padding-left:  42px; /* İkonun input'un üstüne binmesini engellemek için */
+    padding-right: 32px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: box-shadow 0.1s ease-in-out; /* Geçiş efekti */
+}
+
+.search-bar input::placeholder {
+    color: #A5A9B3;
+}
+
+.search-bar input:hover {
+    box-shadow: 0 0 0 1px rgb(74, 74, 74), 0 0 8px rgb(134, 214, 241);
+}
+
+.signup-btn {
+    color: white;
+    background-color: #02D076;
+    padding: 8px 18px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.signup-btn:hover {
+    background-color: hsl(154, 98%, 44%);
+}
+
+@media (max-width: 900px) { /* 900px ve daha küçük ekranlar için */
+    .signup-btn {
+        font-size: 0.8rem;
+      
+    }
+
+    .search-bar {
+        display: none;
+    }
+    
+    .nav-bar {
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .left i {
+        display: inline;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .logo{
+        height: 0.8rem;
+    }
+
+    .right i {
+        display: inline;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1083px) { 
+    .menu {
+        display: none;
+    }
+
+    .right i {
+        display: none;
+    }
+
+    .left i {
+        display: inline;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+    .nav-bar {
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo{
+        height: 1rem;
+    }
+
+    .search-bar i {
+        font-size: 0.9rem;
+    }
+
+    .signup-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1083px) and (max-width: 1269px) { 
+    .nav-bar {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
