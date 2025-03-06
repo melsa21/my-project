@@ -5,14 +5,16 @@ body {
 }
 
 .nav-bar {
+    position: relative;
     background-color: #ffffff;
-    height: 65px;
-    box-shadow: 2px 1px 5px rgba(0,0,0,0.1);
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 100px;
+    box-shadow: 4px 2px 3px rgba(0, 0, 0, 0.1);
 }
+
 
 .left {
     display: flex;
@@ -79,11 +81,11 @@ body {
 .signup-btn {
     color: white;
     background-color: #02D076;
-    padding: 8px 18px;
+    padding: 8px 20px;
     border-radius: 4px;
     border: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .signup-btn:hover {
@@ -226,10 +228,89 @@ body {
     display: flex;
 }
 
+.main {
+    padding: 25px 100px;
+}
+
+.hero-section {
+   background-color: #FAFAFA;
+   display: grid;
+   grid-template-columns: 1.4fr 1fr;
+   gap: 70px;
+   padding-top: 65px;
+   padding-left:  180px;
+   padding-right: 180px;
+   padding-bottom: 30px;
+}
+
+.green-heading {
+    color:#02D076;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1D1D1D;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    font-size: 1.55rem;
+    color: #000000;
+}
+
+.hero-btn {
+    color: white;
+    background-color: #02D076;
+    font-weight: 600;
+    padding: 10px 32px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.hero-btn:hover {
+    background-color: hsl(154, 98%, 43%);
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+       grid-template-columns: 1fr; /* Tek sütun yap */
+       grid-template-rows: auto auto; /* Satır sıralaması */
+       padding: 50px 5px;
+       gap: 25px;
+    }
+ 
+    .hero-image {
+       order: -1; /* Fotoğrafı üste al */
+    }
+
+    .left-hero {
+        order: 1;
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    .hero-heading {
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-text {
+        font-size: 1.3rem;
+    }
+
+    .hero-btn {
+        display: none;
+    }
+ }
+
 
 @media (max-width: 900px) { /* 900px ve daha küçük ekranlar için */
     .signup-btn {
         font-size: 0.8rem;
+        padding: 8px 10px;
     }
 
     .search-bar {
@@ -249,7 +330,7 @@ body {
 
     .left i {
         display: inline;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         cursor: pointer;
     }
 
@@ -260,7 +341,7 @@ body {
     .right i {
         display: inline;
         margin-right: 10px;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -307,4 +388,3 @@ body {
         justify-content: space-between;
     }
 }
-
