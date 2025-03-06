@@ -24,12 +24,20 @@ body {
     display: none;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .menu {
     display: flex;
     align-items: center;
     gap: 25px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
+}
+
+.menu a:hover {
+    color:hsl(154, 98%, 44%);
 }
 
 .search-bar {
@@ -65,7 +73,7 @@ body {
 }
 
 .search-bar input:hover {
-    box-shadow: 0 0 0 1px rgb(74, 74, 74), 0 0 8px rgb(134, 214, 241);
+    box-shadow: 0 0 0 1px rgb(74, 74, 74), 0 0 6px rgb(134, 214, 241);
 }
 
 .signup-btn {
@@ -79,13 +87,149 @@ body {
 }
 
 .signup-btn:hover {
-    background-color: hsl(154, 98%, 44%);
+    background-color:hsl(154, 98%, 43%);
 }
+
+
+.dropdown-etkinlik a {
+    text-decoration: none;
+    color:rgb(62, 62, 62);
+}
+
+.etkinlik {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-etkinlik {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px); /*  Menü, .etkinlik öğesinin tam altına yerleşir, ekstra 10 piksel boşluk ekler */
+    left: 0; /* sol kenarını .etkinlik öğesinin sol kenarıyla hizalar */
+    background-color: #ffffff;
+    z-index: 1000; /* Ön planda tut */
+    min-width: 145px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-top: 4px solid #02D076;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/* Hover yapıldığında dropdown açılır */
+.etkinlik:hover .dropdown-etkinlik {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
+
+.tooltip-container {
+    position: relative; /* Konumlandırmayı kolaylaştırmak için */
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden; /* İlk başta gizli */
+    width: 320px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 18px;
+    position: absolute;
+    z-index: 1;
+    top: 185%; /* Tooltip öğesinin üst kısmına yerleştirir */
+    left: 10%;
+    margin-left: -140px; /* Tooltip öğesini tam ortalamak için */
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.3s; /* Geçiş efekti */
+    font-size: 0.72rem;
+}
+
+/* Üçgen şekli */
+.tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: -5px; /* Tooltip'in hemen üstünde olsun diye */
+    left: 50%;
+    margin-left: -5px; /* Üçgeni tam ortalamak için */
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333; /* Üçgenin rengi */
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible; /* Hover yapıldığında görünür */
+    opacity: 1; /* Tooltip tamamen görünür hale gelir */
+}
+
+.item-testler {
+    position: relative; /* Noktanın konumlandırılabilmesi için */
+    padding-left: 16px; /* Noktanın metne yapışmaması için */
+}
+
+.item-testler::before {
+    content: ''; /* İçerik olmadan sadece şekil oluşturacağız */
+    position: absolute;
+    left: 0; /* Noktayı soldan hizalar */
+    top: 50%; /* Yükseklik olarak ortalar */
+    transform: translateY(-50%); /* Yatayda tam ortalamak için */
+    width: 8px; /* Noktanın genişliği */
+    height: 8px; /* Noktanın yüksekliği */
+    background-color: #02D076; /* Yeşil renk */
+    border-radius: 50%; /* Daire şekli */
+}
+
+.komunite {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-komunite a {
+    text-decoration: none;
+    color:rgb(62, 62, 62);
+}
+
+.dropdown-komunite {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 10px); 
+    left: 0;
+    background-color:#ffffff;
+    z-index: 1000;
+    min-width: 145px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-top: 4px solid #02D076;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.komunite:hover .dropdown-komunite {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
 
 @media (max-width: 900px) { /* 900px ve daha küçük ekranlar için */
     .signup-btn {
         font-size: 0.8rem;
-      
     }
 
     .search-bar {
@@ -163,3 +307,4 @@ body {
         justify-content: space-between;
     }
 }
+
